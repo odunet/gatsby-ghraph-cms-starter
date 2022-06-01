@@ -1,0 +1,93 @@
+{
+  "_args": [
+    [
+      "gatsby-source-graphcms@2.8.0",
+      "/Users/ayo/Documents/personnal_Codebox/gatsby/content-refresh-bug/graph-cms-gatsby"
+    ]
+  ],
+  "_from": "gatsby-source-graphcms@2.8.0",
+  "_id": "gatsby-source-graphcms@2.8.0",
+  "_inBundle": false,
+  "_integrity": "sha512-fQZ5R1rQPoQ5FvDP3y46YTjAOwqdCgmsYLLwYBfBanmJKSi3m4413pBY52sJBRxeApBhevciaal1kEvRok1auw==",
+  "_location": "/gatsby-source-graphcms",
+  "_phantomChildren": {
+    "chokidar": "3.5.3",
+    "ci-info": "2.0.0",
+    "clone-response": "1.0.2",
+    "configstore": "5.0.1",
+    "duplexer3": "0.1.4",
+    "fastq": "1.13.0",
+    "file-type": "16.5.3",
+    "fs-extra": "10.1.0",
+    "got": "11.8.3",
+    "http-cache-semantics": "4.1.0",
+    "md5-file": "5.0.0",
+    "mime": "2.6.0",
+    "mimic-response": "1.0.1",
+    "node-object-hash": "2.3.10",
+    "pretty-bytes": "5.6.0",
+    "progress": "2.0.3",
+    "proper-lockfile": "4.1.2",
+    "pump": "3.0.0",
+    "regenerator-runtime": "0.13.9",
+    "tmp": "0.2.1",
+    "to-readable-stream": "1.0.0",
+    "url-parse-lax": "3.0.0",
+    "valid-url": "1.0.9",
+    "xdg-basedir": "4.0.0",
+    "xstate": "4.32.1"
+  },
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "gatsby-source-graphcms@2.8.0",
+    "name": "gatsby-source-graphcms",
+    "escapedName": "gatsby-source-graphcms",
+    "rawSpec": "2.8.0",
+    "saveSpec": null,
+    "fetchSpec": "2.8.0"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/gatsby-source-graphcms/-/gatsby-source-graphcms-2.8.0.tgz",
+  "_spec": "2.8.0",
+  "_where": "/Users/ayo/Documents/personnal_Codebox/gatsby/content-refresh-bug/graph-cms-gatsby",
+  "dependencies": {
+    "@babel/runtime": "7.16.7",
+    "gatsby-core-utils": "3.4.0",
+    "gatsby-graphql-source-toolkit": "^2.0.2",
+    "gatsby-source-filesystem": "^4.4.0",
+    "he": "^1.2.0",
+    "node-fetch": "2.6.1"
+  },
+  "description": "The official Gatsby source plugin for GraphCMS projects",
+  "devDependencies": {
+    "@babel/cli": "7.16.7",
+    "@babel/core": "7.16.7",
+    "@babel/plugin-transform-runtime": "7.16.7",
+    "@babel/preset-env": "7.16.7"
+  },
+  "engines": {
+    "node": ">=14.15.0"
+  },
+  "keywords": [
+    "data",
+    "gatsby",
+    "gatsby-plugin",
+    "graphcms",
+    "graphql",
+    "source"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "name": "gatsby-source-graphcms",
+  "peerDependencies": {
+    "gatsby": "^4.0.0",
+    "gatsby-plugin-image": "^2.0.0"
+  },
+  "scripts": {
+    "build": "babel src --out-dir ./ --source-maps"
+  },
+  "version": "2.8.0"
+}
