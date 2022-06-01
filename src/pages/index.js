@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Link, graphql } from "gatsby"
+import { Link, graphql, } from "gatsby"
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
@@ -8,8 +8,9 @@ import Seo from "../components/seo"
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const posts = data.allMarkdownRemark.nodes
+  const blogPosts = data.allGraphCmsBlogPost.nodes
 
-  if (posts.length === 0) {
+  if (posts.length === 0 || blogPosts.length === 0) {
     return (
       <Layout location={location} title={siteTitle}>
         <Seo title="All posts" />
@@ -59,6 +60,37 @@ const BlogIndex = ({ data, location }) => {
           )
         })}
       </ol>
+      <ol style={{ listStyle: `none` }}>
+        {blogPosts.map(post => {
+          const title = post.title || 'Test Title'
+
+          return (
+            <li key={post.slug}>
+              <article
+                className="post-list-item"
+                itemScope
+                itemType="http://schema.org/Article"
+              >
+                <header>
+                  <h2>
+                    <Link to={post.slug} itemProp="url">
+                      <span itemProp="headline">{title}</span>
+                    </Link>
+                  </h2>
+                </header>
+                <section>
+                  <p
+                    dangerouslySetInnerHTML={{
+                      __html: post?.description?.html || 'Test Description',
+                    }}
+                    itemProp="description"
+                  />
+                </section>
+              </article>
+            </li>
+          )
+        })}
+      </ol>
     </Layout>
   )
 }
@@ -82,6 +114,17 @@ export const pageQuery = graphql`
           date(formatString: "MMMM DD, YYYY")
           title
           description
+        }
+      }
+    }
+    allGraphCmsBlogPost {
+    nodes {
+      id
+      remoteId
+      author
+      title
+      description {
+        html
         }
       }
     }
