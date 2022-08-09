@@ -1,8 +1,17 @@
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
-exports.createPages = async ({ graphql, actions, reporter }) => {
+exports.createPages = async ({ graphql, actions, reporter, traceId }) => {
   const { createPage } = actions
+  console.log('*************************')
+  console.log(`TraceId: ${traceId}`)
+  const used = process.memoryUsage()
+  Object.keys(used).forEach((key) => {
+    if (key !== 'external' && key !== 'arrayBuffers')
+      console.log(`${key} ${Math.round((used[key] / 1024 / 1024) * 100) / 100} MB`)
+  })
+  console.log(process.env.NODE_ENV)
+  console.log('*************************')
 
   // Define a template for blog post
   const blogPost = path.resolve(`./src/templates/blog-post.js`)
